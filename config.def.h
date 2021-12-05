@@ -3,12 +3,13 @@
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 static int centered = 0;                    /* -c option; centers dmenu on screen */
-static int min_width = 500;                    /* minimum width when centered */
+static int min_width = 800;                    /* minimum width when centered */
 static int fuzzy = 1;                      /* -F  option; if 0, dmenu doesn't use fuzzy matching     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 	"monospace:size=10", "Blobmoji:pixelsize=10:antialias=true:autohint=true"
 };
+static const unsigned int alpha = 0xcc;
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
@@ -17,6 +18,11 @@ static const char *colors[SchemeLast][2] = {
 	[SchemeSelHighlight] = { "#75715e", "#66D9EF" },
 	[SchemeNormHighlight] = { "#f92672", "#272822" },
 	[SchemeOut] = { "#F4BF75", "#e7c547" },
+};
+static const unsigned int alphas[SchemeLast][2] = {
+    [SchemeNorm] = { OPAQUE, alpha },
+    [SchemeSel] = { OPAQUE, alpha },
+    [SchemeOut] = { OPAQUE, alpha },
 };
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
 static unsigned int lines      = 0;
