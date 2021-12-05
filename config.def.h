@@ -12,18 +12,18 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#222222" },
-	[SchemeSel] = { "#eeeeee", "#005577" },
-	[SchemeSelHighlight] = { "#ffc978", "#005577" },
-	[SchemeNormHighlight] = { "#ffc978", "#222222" },
-	[SchemeOut] = { "#000000", "#00ffff" },
+	[SchemeNorm] = { "#F8F8F2", "#272822"  },
+	[SchemeSel] = { "#f8f8f2", "#7aa6da" },
+	[SchemeSelHighlight] = { "#75715e", "#66D9EF" },
+	[SchemeNormHighlight] = { "#f92672", "#272822" },
+	[SchemeOut] = { "#F4BF75", "#e7c547" },
 };
 /* -l and -g options; controls number of lines and columns in grid if > 0 */
 static unsigned int lines      = 0;
 static unsigned int columns    = 0;
 /* -h option; minimum height of a menu line */
 static unsigned int lineheight = 0;
-static unsigned int min_lineheight = 8;
+static unsigned int min_lineheight = 24;
 
 /*
  * Characters not considered part of a word while deleting words
